@@ -134,6 +134,7 @@ form {
     color: #bb86fc;
 }
 
-.img{
+.carousel-item{
     max-width: 700px;
+    max-height: 700px;
 }
