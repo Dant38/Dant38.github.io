@@ -120,9 +120,6 @@ form {
     align-self: center;
 }
 
-.btn:hover{
-    background-image: url('../imagens/button2.png') ;
-}
 
 .btn{
     background-image: url('../imagens/button1.png') ;
