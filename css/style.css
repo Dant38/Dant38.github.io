@@ -133,3 +133,7 @@ form {
 .h3 {
     color: #bb86fc;
 }
+
+.img{
+    max-width: 900px;
+}
