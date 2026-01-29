@@ -1,0 +1,251 @@
+:root{
+    --bkg: #040404;
+    --text: #9d1616;
+    --prm: #a91212;
+    --scd: #580808;
+}
+
+/* BASE */
+body{
+    background-color: var(--bkg);
+    color: var(--text);
+    font-family: 'Eagle Lake', serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* CONTAINER */
+.container-portfolio{
+    max-width: 900px;
+    margin: auto;
+    padding: 4rem 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* PERFIL */
+.perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8rem;
+}
+#perfil{
+    width: 150px;
+    border-radius: 10%;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#perfil:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--scd);
+}
+
+/* TITULOS */
+.hover-underline{
+    position: relative;
+    display: inline-block;
+    margin: 2rem 0 1.5rem;
+}
+
+.hover-underline::after,
+.hover-underline::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--prm), var(--scd));
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.hover-underline::after{
+    bottom: -6px;
+    transform-origin: right;
+}
+
+.hover-underline::before{
+    top: -6px;
+    transform-origin: left;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before{
+    transform: scaleX(1);
+}
+
+/* SOBRE */
+.sobre p{
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+/* LIVROS */
+.livros-grid{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.livros-grid img{
+    width: 200px;
+    border-radius: 8px;
+}
+
+.livro{
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform .5s ease, box-shadow .5s ease;
+}
+
+.livro:hover{
+    transform: scale(1.06);
+    box-shadow: 0 0 30px rgba(169,18,18,.35);
+}
+
+
+/* DESIGNS */
+.designs-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 140px;
+    gap: 1.2rem;
+}
+
+/* base */
+.design{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform .5s ease, box-shadow .5s ease;
+}
+
+.design:hover{
+    transform: scale(1.06);
+    box-shadow: 0 0 30px rgba(169,18,18,.35);
+}
+
+/* POSICIONAMENTO MANUAL */
+
+/* anjo (grande à esquerda) */
+.anjo{
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+}
+
+/* akaza (embaixo do anjo) */
+.akaza{
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 2;
+}
+
+/* tupac (topo direito) */
+.tupac{
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 2;
+}
+
+/* h2o (embaixo do tupac) */
+.h2o{
+    grid-column: 3 / span 1;
+    grid-row: 3 / span 1;
+}
+
+
+/* BACKGROUND ART */
+.background-art{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bg-img{
+    position: absolute;
+    width: 220px;
+    opacity: 0.07;
+    filter: blur(1px);
+    mix-blend-mode: screen;
+    animation: float 10s ease-in-out infinite;
+}
+
+/* espalhamento manual (ajuste como quiser) */
+.bg-img:nth-child(1){ top: 10%; left: 5%; animation-delay: 0s; }
+.bg-img:nth-child(2){ top: 25%; left: 70%; animation-delay: 2s; }
+.bg-img:nth-child(3){ top: 40%; left: 30%; animation-delay: 4s; }
+
+.bg-img:nth-child(4){ top: 55%; left: 10%; animation-delay: 1s; }
+.bg-img:nth-child(5){ top: 70%; left: 60%; animation-delay: 3s; }
+.bg-img:nth-child(6){ top: 85%; left: 35%; animation-delay: 5s; }
+
+.bg-img:nth-child(7){ top: -10%; left: 30%; animation-delay: 1s; }
+.bg-img:nth-child(8){ top: 10%; left: 60%; animation-delay: 3s; }
+.bg-img:nth-child(9){ top: 30%; left: 50%; animation-delay: 5s; }
+
+@keyframes float{
+    0%{
+        opacity: 0.05;
+        transform: translate(0,0);
+    }
+    50%{
+        opacity: 0.12;
+        transform: translate(12px,-10px);
+    }
+    100%{
+        opacity: 0.05;
+        transform: translate(0,0);
+    }
+}
+
+.divider{
+    width: 60%;
+    height: 1px;
+    margin: 3rem auto;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--prm),
+        transparent
+    );
+    opacity: .6;
+}
+
+.footer{
+    margin-top: 5rem;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-icons a{
+    color: var(--text);
+    font-size: 1.6rem;
+    transition: transform .3s ease, color .3s ease;
+}
+
+.social-icons a:hover{
+    color: var(--prm);
+    transform: scale(1.2);
+}
+
+.credits{
+    font-size: .85rem;
+    opacity: .6;
+    line-height: 1.4;
+}
+
+
