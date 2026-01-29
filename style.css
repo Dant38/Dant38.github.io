@@ -248,4 +248,93 @@ body{
     line-height: 1.4;
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+}
 
+@media (max-width: 768px){
+
+    /* container mais compacto */
+    .container-portfolio{
+        padding: 2.5rem 1rem;
+    }
+
+    /* título principal */
+    .hover-underline{
+        font-size: 1.6rem;
+    }
+
+    /* texto */
+    .sobre p{
+        font-size: .95rem;
+        line-height: 1.5;
+    }
+
+    /* livros empilhados */
+    .livros-grid{
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .livros-grid img{
+        width: 160px;
+    }
+
+    /* GRID DE DESIGNS — vira composição vertical */
+    .designs-grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 160px;
+        gap: 1rem;
+    }
+
+    /* reset do posicionamento manual */
+    .anjo,
+    .akaza,
+    .tupac,
+    .h2o{
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    /* imagens um pouco menores */
+    .design{
+        border-radius: 12px;
+    }
+
+    /* background menos poluído */
+    .bg-img{
+        width: 150px;
+        opacity: 0.05;
+    }
+
+    /* footer */
+    .social-icons{
+        gap: 1.5rem;
+    }
+
+    .credits{
+        font-size: .75rem;
+    }
+}
+
+@media (max-width: 480px){
+
+    #perfil{
+        width: 120px;
+    }
+
+    .hover-underline{
+        font-size: 1.4rem;
+    }
+
+    .designs-grid{
+        grid-template-columns: 1fr;
+        grid-auto-rows: 200px;
+    }
+
+    .bg-img{
+        width: 120px;
+    }
+}
